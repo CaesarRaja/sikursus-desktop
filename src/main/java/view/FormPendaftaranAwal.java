@@ -63,7 +63,7 @@ public class FormPendaftaranAwal extends javax.swing.JFrame {
 
         txtJumlah.setText("Jumlah");
 
-        cmbKursus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Java", "Data Science", "UI/UX", " " }));
+        cmbKursus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Java", "Data Science", "UI/UX" }));
         cmbKursus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbKursusActionPerformed(evt);
