@@ -16,7 +16,7 @@ public class DemoKursus {
             500000
         );
 
-    double hasil = k1.hitungBiayaSetelahDiskon(25);
+    double hasil = k1.hitungBiayaSetelahDiskon(10);
     System.out.println("Biaya setelah diskon: " + hasil);
     }
 }
