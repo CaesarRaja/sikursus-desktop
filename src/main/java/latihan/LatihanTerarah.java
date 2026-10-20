@@ -5,19 +5,36 @@
  */
 package latihan;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 /**
  *
  * @author USER
  */
 public class LatihanTerarah {
     public static void main(String[] args) {           //main method
+        Scanner input = new Scanner(System.in);
+
         //variabel
         String kode = "JAVA-BSC";
         String nama = "Java Desktop Fundamental";
         boolean aktif = true;
 
         double biaya = 3_825_000;
-        double registrasi = 500_000;
+        double registrasi = 0;
+
+        // Meminta biaya registrasi sampai pengguna memasukkan angka
+        boolean valid = false;
+        while (!valid) {
+            try {
+                System.out.print("Masukkan biaya registrasi : Rp");
+                registrasi = input.nextDouble();
+                valid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Input harus berupa angka, coba lagi.");
+                input.nextLine();   // membersihkan sisa input di buffer
+            }
+        }
 
         // Total sebelum diskon
         double totalSebelumDiskon = biaya + registrasi;
@@ -26,14 +43,14 @@ public class LatihanTerarah {
         double diskon;
 
         if (totalSebelumDiskon >= 3_500_000) {
-        diskon = 0.15; // 15%
-    } else if (totalSebelumDiskon >= 1_500_000) {
-        diskon = 0.10; // 10%
-    } else if (totalSebelumDiskon >= 1_000_000) {
-        diskon = 0.05; // 5%
-    } else {
-        diskon = 0.0;  // Tidak ada diskon
-    }
+            diskon = 0.15; // 15%
+        } else if (totalSebelumDiskon >= 1_500_000) {
+            diskon = 0.10; // 10%
+        } else if (totalSebelumDiskon >= 1_000_000) {
+            diskon = 0.05; // 5%
+        } else {
+            diskon = 0.0;  // Tidak ada diskon
+        }
 
         // Menghitung potongan dan total
         double potongan = totalSebelumDiskon * diskon;
@@ -49,6 +66,7 @@ public class LatihanTerarah {
         }
 
         // Menampilkan hasil
+        System.out.println();
         System.out.println("Kode       : " + kode);
         System.out.println("Kursus     : " + nama);
         System.out.println("Aktif      : " + aktif);
@@ -59,5 +77,7 @@ public class LatihanTerarah {
         System.out.printf("Potongan   : Rp%,.0f%n", potongan);
         System.out.printf("Total      : Rp%,.0f%n", total);
         System.out.println("Status     : " + status);
+
+        input.close();
     }
 }
