@@ -98,6 +98,11 @@ public class FormPendaftaranKursus extends javax.swing.JFrame {
 
         txtKodeAkses.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtKodeAkses.setText("jPasswordField1");
+        txtKodeAkses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKodeAksesActionPerformed(evt);
+            }
+        });
 
         lblNama2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNama2.setText("Kode Akses");
@@ -358,6 +363,10 @@ public class FormPendaftaranKursus extends javax.swing.JFrame {
             resetForm();
         }
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void txtKodeAksesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKodeAksesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKodeAksesActionPerformed
 
     private void resetForm() {
         txtNama.setText("");
